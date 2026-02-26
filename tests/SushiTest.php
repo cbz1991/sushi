@@ -234,6 +234,7 @@ class SushiTest extends TestCase
         Bar::count(); // triggers boot → registerOctaneRefreshListener() returns early
 
         $prop = (new \ReflectionClass(Bar::class))->getProperty('sushiOctaneListenerRegistered');
+        $prop->setAccessible(true);
         $this->assertFalse($prop->getValue());
     }
 
