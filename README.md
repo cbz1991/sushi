@@ -1,6 +1,22 @@
 # Sushi 🍣
 Eloquent's missing "array" driver.
 
+> **About this branch:** `patched` is [calebporzio/sushi](https://github.com/calebporzio/sushi) plus open pull requests that fix real bugs, kept here until they're merged upstream. Each commit keeps its original author.
+>
+> - [#130](https://github.com/calebporzio/sushi/pull/130) Fine-tune SQLite cache handling (fixes `no such table` when several processes build the cache)
+> - [#127](https://github.com/calebporzio/sushi/pull/127) Ensure the first row is read from non-zero-indexed arrays
+> - [#126](https://github.com/calebporzio/sushi/pull/126) Use Eloquent's getters for the primary key name and incrementing
+> - [#131](https://github.com/calebporzio/sushi/pull/131) Refresh the Sushi connection on each Octane request (opt-in)
+>
+> To use it:
+>
+> ```json
+> "repositories": [{ "type": "vcs", "url": "https://github.com/cbz1991/sushi" }],
+> "require": { "calebporzio/sushi": "dev-patched as 2.5.4" }
+> ```
+>
+> Once these are released upstream, switch back to `calebporzio/sushi`.
+
 Sometimes you want to use Eloquent, but without dealing with a database.
 
 ## This Package Is Sponsorware 💰💰💰
